@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import 'dotenv/config'
 
-import productRoutes from "./routes/product.js"
+import productRoutes from "./routes/products.js"
 
 const app = express()
 
@@ -12,9 +12,9 @@ app.use(express.json())
 
 let url = process.env.DBconnection
 
-mongoose.connect(url).then(()=>{
+mongoose.connect(url).then(() => {
     console.log("DB Connected");
-}).catch((error)=>{
+}).catch((error) => {
     console.log("DB Connection Error")
     console.error(error)
 })
